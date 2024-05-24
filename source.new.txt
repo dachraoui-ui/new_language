@@ -1,0 +1,29 @@
+@PROG 
+@DECL
+%1:ENTIER, %2:REEL, %3:CHAINE, %4:TABLEAU[10]
+DECL@
+@CORPS 
+ECRIRE("Début du programme");
+%1 := 0;
+%2 := 3.14;
+%3 := "Bienvenue";
+
+FOR (%1 := 1; %1 <= 10; %1++)
+    %4[%1] := %1 * %1;
+    ECRIRE("Tableau[%1] = %4[%1]");
+FINFOR
+
+SI (%2 > 2.5)
+    ECRIRE("La valeur de %2 est supérieure à 2.5");
+SINON
+    ECRIRE("La valeur de %2 est inférieure ou égale à 2.5");
+FINSI
+
+TANTQUE (%1 < 20)
+    %1 := %1 + 1;
+    ECRIRE("TANTQUE boucle, %1 = %1");
+FINTANTQUE
+
+ECRIRE("Fin du programme");
+CORPS@
+PROG@
